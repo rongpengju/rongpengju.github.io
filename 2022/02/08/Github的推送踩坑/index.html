@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022/1 | Hexo</title>
+  <title>Github的验证踩坑 | RongPengju&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2022/01/index.html">
-<meta property="og:site_name" content="Hexo">
+  <meta name="description" content="从 2021 年 8 月 13 日开始，我们将在对 Github 操作进行身份验证时不再接受帐户密码，并将要求使用基于令牌（token）的身份验证，这就导致我们在进行推送或者其他的一些git操作时会出现：remote: Support for password authentication was removed on August 13, 2021. Please use a personal">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github的验证踩坑">
+<meta property="og:url" content="http://example.com/2022/02/08/Github%E7%9A%84%E6%8E%A8%E9%80%81%E8%B8%A9%E5%9D%91/index.html">
+<meta property="og:site_name" content="RongPengju&#39;s blog">
+<meta property="og:description" content="从 2021 年 8 月 13 日开始，我们将在对 Github 操作进行身份验证时不再接受帐户密码，并将要求使用基于令牌（token）的身份验证，这就导致我们在进行推送或者其他的一些git操作时会出现：remote: Support for password authentication was removed on August 13, 2021. Please use a personal">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="article:published_time" content="2022-02-08T08:13:25.487Z">
+<meta property="article:modified_time" content="2022-02-08T09:03:07.721Z">
+<meta property="article:author" content="Chad">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="RongPengju&#39;s blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -43,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="https://img0.baidu.com/it/u=2113465134,1784125635&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=PNG?w=400&amp;h=400" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/"></a></h1>
@@ -54,8 +59,6 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
-	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -77,13 +80,15 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/rongpengju" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 		        
 					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+		        
+					<a class="mail" target="_blank" href="/gophercoding@gmail.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -101,7 +106,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="https://img0.baidu.com/it/u=2113465134,1784125635&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=PNG?w=400&amp;h=400" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author"></h1>
@@ -111,20 +116,20 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/rongpengju" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
 			        
 						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+			        
+						<a class="mail" target="_blank" href="/gophercoding@gmail.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -133,9 +138,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
-		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -150,76 +153,158 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Github的推送踩坑" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/01/30/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2022-01-30T15:57:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/01/30/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
+    <h1 class="article-title" itemprop="name">
+      Github的验证踩坑
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/01/30/hello-world/" class="archive-article-date">
-  	<time datetime="2022-01-30T15:24:01.960Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-30</time>
+        
+        <a href="/2022/02/08/Github%E7%9A%84%E6%8E%A8%E9%80%81%E8%B8%A9%E5%9D%91/" class="archive-article-date">
+  	<time datetime="2022-02-08T08:13:25.487Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-08</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/01/30/hello-world/">Hello World</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>从 2021 年 8 月 13 日开始，我们将在对 Github 操作进行身份验证时不再接受帐户密码，并将要求使用基于令牌（token）的身份验证，这就导致我们在进行推送或者其他的一些git操作时会出现：remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.类似这样的错误，所以我们要采用token登陆，下面就来教大家如何操作.</p>
+<hr>
+<h2 id="（1）登陆Github，点击右上角头像，然后进入settings"><a href="#（1）登陆Github，点击右上角头像，然后进入settings" class="headerlink" title="（1）登陆Github，点击右上角头像，然后进入settings"></a>（1）登陆Github，点击右上角头像，然后进入settings</h2><h2 id="（2）然后点击左边菜单栏最下方的Developer-settings"><a href="#（2）然后点击左边菜单栏最下方的Developer-settings" class="headerlink" title="（2）然后点击左边菜单栏最下方的Developer settings"></a>（2）然后点击左边菜单栏最下方的Developer settings</h2><h2 id="（3）然后选择Personal-access-tokens"><a href="#（3）然后选择Personal-access-tokens" class="headerlink" title="（3）然后选择Personal access tokens"></a>（3）然后选择Personal access tokens</h2><h2 id="（4）然后点击Generate-new-token"><a href="#（4）然后点击Generate-new-token" class="headerlink" title="（4）然后点击Generate new token"></a>（4）然后点击Generate new token</h2><h2 id="（5）设置token的过期时间、权限等，然后点击最下面的Generate-token"><a href="#（5）设置token的过期时间、权限等，然后点击最下面的Generate-token" class="headerlink" title="（5）设置token的过期时间、权限等，然后点击最下面的Generate token"></a>（5）设置token的过期时间、权限等，然后点击最下面的Generate token</h2><h2 id="（6）保存好生成的token，在需要输入密码时，输入生成的token即可"><a href="#（6）保存好生成的token，在需要输入密码时，输入生成的token即可" class="headerlink" title="（6）保存好生成的token，在需要输入密码时，输入生成的token即可"></a>（6）保存好生成的token，在需要输入密码时，输入生成的token即可</h2><h2 id="（7）也可以直接将token加入到远程仓库链接中，git-remote-set-url-origin-https-github-com-git"><a href="#（7）也可以直接将token加入到远程仓库链接中，git-remote-set-url-origin-https-github-com-git" class="headerlink" title="（7）也可以直接将token加入到远程仓库链接中，git remote set-url origin https://@github.com//.git"></a>（7）也可以直接将token加入到远程仓库链接中，git remote set-url origin https://<your_token>@github.com/<USERNAME>/<REPO>.git</h2>
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/02/08/Github%E7%9A%84%E6%8E%A8%E9%80%81%E8%B8%A9%E5%9D%91/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -229,7 +314,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 John Doe
+    		&copy; 2022 Chad
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -242,8 +327,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -310,6 +395,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -391,7 +480,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">Chad 就职于创业公司的三本生&lt;br&gt;&lt;br&gt;目前是一名实习生&lt;br&gt;谢谢大家</div>
   	  	
     	</section>
     
