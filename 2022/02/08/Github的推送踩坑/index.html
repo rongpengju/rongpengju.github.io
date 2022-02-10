@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Github的验证踩坑 | RongPengju&#39;s blog</title>
+  <title>Github的验证踩坑 | 荣鹏举的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="从 2021 年 8 月 13 日开始，我们将在对 Github 操作进行身份验证时不再接受帐户密码，并将要求使用基于令牌（token）的身份验证，这就导致我们在进行推送或者其他的一些git操作时会出现：remote: Support for password authentication was removed on August 13, 2021. Please use a personal">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Github的验证踩坑">
 <meta property="og:url" content="http://example.com/2022/02/08/Github%E7%9A%84%E6%8E%A8%E9%80%81%E8%B8%A9%E5%9D%91/index.html">
-<meta property="og:site_name" content="RongPengju&#39;s blog">
+<meta property="og:site_name" content="荣鹏举的博客">
 <meta property="og:description" content="从 2021 年 8 月 13 日开始，我们将在对 Github 操作进行身份验证时不再接受帐户密码，并将要求使用基于令牌（token）的身份验证，这就导致我们在进行推送或者其他的一些git操作时会出现：remote: Support for password authentication was removed on August 13, 2021. Please use a personal">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-08T08:13:25.487Z">
-<meta property="article:modified_time" content="2022-02-08T09:03:07.721Z">
-<meta property="article:author" content="Chad">
+<meta property="article:modified_time" content="2022-02-08T09:21:41.385Z">
+<meta property="article:author" content="荣鹏举">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="RongPengju&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="荣鹏举的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -175,7 +175,7 @@
       
         <p>从 2021 年 8 月 13 日开始，我们将在对 Github 操作进行身份验证时不再接受帐户密码，并将要求使用基于令牌（token）的身份验证，这就导致我们在进行推送或者其他的一些git操作时会出现：remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.类似这样的错误，所以我们要采用token登陆，下面就来教大家如何操作.</p>
 <hr>
-<h2 id="（1）登陆Github，点击右上角头像，然后进入settings"><a href="#（1）登陆Github，点击右上角头像，然后进入settings" class="headerlink" title="（1）登陆Github，点击右上角头像，然后进入settings"></a>（1）登陆Github，点击右上角头像，然后进入settings</h2><h2 id="（2）然后点击左边菜单栏最下方的Developer-settings"><a href="#（2）然后点击左边菜单栏最下方的Developer-settings" class="headerlink" title="（2）然后点击左边菜单栏最下方的Developer settings"></a>（2）然后点击左边菜单栏最下方的Developer settings</h2><h2 id="（3）然后选择Personal-access-tokens"><a href="#（3）然后选择Personal-access-tokens" class="headerlink" title="（3）然后选择Personal access tokens"></a>（3）然后选择Personal access tokens</h2><h2 id="（4）然后点击Generate-new-token"><a href="#（4）然后点击Generate-new-token" class="headerlink" title="（4）然后点击Generate new token"></a>（4）然后点击Generate new token</h2><h2 id="（5）设置token的过期时间、权限等，然后点击最下面的Generate-token"><a href="#（5）设置token的过期时间、权限等，然后点击最下面的Generate-token" class="headerlink" title="（5）设置token的过期时间、权限等，然后点击最下面的Generate token"></a>（5）设置token的过期时间、权限等，然后点击最下面的Generate token</h2><h2 id="（6）保存好生成的token，在需要输入密码时，输入生成的token即可"><a href="#（6）保存好生成的token，在需要输入密码时，输入生成的token即可" class="headerlink" title="（6）保存好生成的token，在需要输入密码时，输入生成的token即可"></a>（6）保存好生成的token，在需要输入密码时，输入生成的token即可</h2><h2 id="（7）也可以直接将token加入到远程仓库链接中，git-remote-set-url-origin-https-github-com-git"><a href="#（7）也可以直接将token加入到远程仓库链接中，git-remote-set-url-origin-https-github-com-git" class="headerlink" title="（7）也可以直接将token加入到远程仓库链接中，git remote set-url origin https://@github.com//.git"></a>（7）也可以直接将token加入到远程仓库链接中，git remote set-url origin https://<your_token>@github.com/<USERNAME>/<REPO>.git</h2>
+<h3 id="（1）登陆Github，点击右上角头像，然后进入settings"><a href="#（1）登陆Github，点击右上角头像，然后进入settings" class="headerlink" title="（1）登陆Github，点击右上角头像，然后进入settings"></a>（1）登陆Github，点击右上角头像，然后进入settings</h3><h3 id="（2）然后点击左边菜单栏最下方的Developer-settings"><a href="#（2）然后点击左边菜单栏最下方的Developer-settings" class="headerlink" title="（2）然后点击左边菜单栏最下方的Developer settings"></a>（2）然后点击左边菜单栏最下方的Developer settings</h3><h3 id="（3）然后选择Personal-access-tokens"><a href="#（3）然后选择Personal-access-tokens" class="headerlink" title="（3）然后选择Personal access tokens"></a>（3）然后选择Personal access tokens</h3><h3 id="（4）然后点击Generate-new-token"><a href="#（4）然后点击Generate-new-token" class="headerlink" title="（4）然后点击Generate new token"></a>（4）然后点击Generate new token</h3><h3 id="（5）设置token的过期时间、权限等，然后点击最下面的Generate-token"><a href="#（5）设置token的过期时间、权限等，然后点击最下面的Generate-token" class="headerlink" title="（5）设置token的过期时间、权限等，然后点击最下面的Generate token"></a>（5）设置token的过期时间、权限等，然后点击最下面的Generate token</h3><h3 id="（6）保存好生成的token，在需要输入密码时，输入生成的token即可"><a href="#（6）保存好生成的token，在需要输入密码时，输入生成的token即可" class="headerlink" title="（6）保存好生成的token，在需要输入密码时，输入生成的token即可"></a>（6）保存好生成的token，在需要输入密码时，输入生成的token即可</h3><h3 id="（7）也可以直接将token加入到远程仓库链接中，git-remote-set-url-origin-https-github-com-git"><a href="#（7）也可以直接将token加入到远程仓库链接中，git-remote-set-url-origin-https-github-com-git" class="headerlink" title="（7）也可以直接将token加入到远程仓库链接中，git remote set-url origin https://@github.com//.git"></a>（7）也可以直接将token加入到远程仓库链接中，git remote set-url origin https://<your_token>@github.com/<USERNAME>/<REPO>.git</h3>
       
 
       
@@ -277,6 +277,20 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2022/02/08/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -314,7 +328,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2022 Chad
+    		&copy; 2022 荣鹏举
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -398,6 +412,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">gRPC</a>
               </li>
             
             <div class="clearfix"></div>
